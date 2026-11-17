@@ -25,11 +25,11 @@ Portfolio web estático (HTML + CSS + JS, sin dependencias).
 
 ## Links directos a cada tema
 `#tradicional`, `#neotradicional`, `#tarot`, `#cyberpunk`, `#posters`.
-Por ejemplo: `https://tuusuario.github.io/tu-repo/#posters`
+Por ejemplo: `https://agustincohenn-droid.github.io/Portfolio/#posters`
 
 ## Publicar en GitHub Pages
 1. Subí esta carpeta a un repo.
 2. Settings → Pages → Deploy from branch → `main` / root.
 3. Cuando tengas la dirección, en `index.html` cambiá `<meta property="og:image" content="og.jpg">`
-   por la URL completa (ej. `https://tuusuario.github.io/tu-repo/og.jpg`) para que la vista previa
+   por la URL completa (ej. `https://agustincohenn-droid.github.io/Portfolio/og.jpg`) para que la vista previa
    aparezca bien en todas las apps.
