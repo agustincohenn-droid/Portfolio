@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agustín Cohen — Tattoo &amp; Ilustración</title>
+<meta name="description" content="Portfolio de Agustín Cohen, tatuador e ilustrador de Buenos Aires. Flash sheets de Tradicional Americano y Neotradicional, tarot, cyberpunk y pósters de cine.">
+<meta name="theme-color" content="#16120f">
+<meta name="author" content="Agustín Cohen">
+
+<!-- Vista previa al compartir (WhatsApp, Instagram, X, etc.).
+     Cuando tengas la dirección final de la web, reemplazá "og.jpg" por la URL completa,
+     por ejemplo https://tuusuario.github.io/tu-repo/og.jpg (algunas apps solo aceptan URLs completas). -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Agustín Cohen">
+<meta property="og:title" content="Agustín Cohen — Tattoo & Ilustración">
+<meta property="og:description" content="Flash sheets, Neotradicional, tarot y pósters de cine. Diseños de tatuaje a pedido desde Buenos Aires.">
+<meta property="og:image" content="https://agustincohenn-droid.github.io/portfolio/og.jpg">
+<meta property="og:url" content="https://agustincohenn-droid.github.io/portfolio/">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_AR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2316120f'/%3E%3Ctext x='32' y='49' font-family='Georgia,serif' font-weight='700' font-size='46' text-anchor='middle' fill='%23efe4cb'%3EA%3C/text%3E%3Ccircle cx='51' cy='46' r='4' fill='%23d6a12a'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="thumb/presaocazador.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Archivo:wght@400;500;700;800&family=Archivo+Narrow:wght@500;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Agustín Cohen","jobTitle":"Tatuador e ilustrador",
+ "email":"mailto:agustincohenn@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Buenos Aires","addressCountry":"AR"},
+ "sameAs":["https://www.instagram.com/agustincxhen/","https://www.tiktok.com/@acxhen"]}
+</script>
+<script src="imagenes.js"></script>
+<style>
+  :root{
+    --paper:#efe4cb; --paper-2:#e6d6b4; --ink:#16120f; --ink-2:#3a2f27;
+    --red:#b3221a; --mustard:#d6a12a; --teal:#2c6b5f; --muted:#6d5d4c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:"Archivo",system-ui,sans-serif; font-size:17px; line-height:1.55;
+    background-image:
+      radial-gradient(ellipse at 15% 10%, rgba(255,250,235,.7), transparent 55%),
+      radial-gradient(ellipse at 85% 90%, rgba(150,110,60,.18), transparent 60%);
+    background-attachment:fixed;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+  :focus-visible{outline:3px solid var(--mustard);outline-offset:3px}
+  .skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--mustard);color:var(--ink);
+        padding:10px 16px;font-weight:700;text-decoration:none}
+  .skip:focus{top:12px}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:20;background:var(--ink);color:var(--paper);
+      border-bottom:4px solid var(--red)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .logo{font-family:"Pirata One",serif;font-size:34px;line-height:1;text-decoration:none;letter-spacing:.5px}
+  .logo span{color:var(--mustard)}
+  nav ul{list-style:none;display:flex;gap:26px}
+  nav ul a{font-family:"Archivo Narrow",sans-serif;font-weight:700;text-transform:uppercase;
+           letter-spacing:2px;font-size:14px;text-decoration:none;opacity:.85}
+  nav ul a:hover{opacity:1;color:var(--mustard)}
+  nav .wrap > ul{margin-left:auto}
+
+  .lang{display:flex;border:2px solid var(--paper);margin-left:22px}
+  .lang button{background:none;border:none;color:var(--paper);font-family:"Archivo Narrow",sans-serif;font-weight:700;letter-spacing:1.5px;font-size:13px;padding:5px 9px;cursor:pointer}
+  .lang button[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
+
+  .menu-btn{display:none;background:none;border:2px solid var(--paper);color:var(--paper);width:42px;height:38px;
+            margin-left:12px;cursor:pointer;align-items:center;justify-content:center}
+  .menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:20px;height:2px;background:currentColor;position:relative;transition:transform .2s}
+  .menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}
+  .menu-btn span::before{top:-6px} .menu-btn span::after{top:6px}
+  .menu-btn[aria-expanded="true"] span{background:transparent}
+  .menu-btn[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+  .menu-btn[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+
+  /* HERO */
+  .hero{padding:72px 0 88px;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+  .eyebrow{font-family:"Archivo Narrow",sans-serif;font-weight:700;letter-spacing:3px;
+           text-transform:uppercase;font-size:14px;color:var(--red);display:flex;align-items:center;gap:12px}
+  .eyebrow::before{content:"";width:34px;height:3px;background:var(--red)}
+  h1{font-family:"Pirata One",serif;font-weight:400;font-size:clamp(56px,7.6vw,112px);line-height:.88;
+     margin:18px 0 22px;letter-spacing:1px}
+  h1 em{font-style:normal;color:var(--red);display:block;font-size:.62em;margin-top:.12em}
+  .lead{font-size:20px;max-width:36ch;color:var(--ink-2)}
+  .ctas{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+  .btn{font-family:"Archivo Narrow",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:2px;
+       font-size:15px;padding:15px 26px;border:3px solid var(--ink);text-decoration:none;color:var(--ink);
+       box-shadow:5px 5px 0 var(--ink);transition:transform .15s, box-shadow .15s;background:var(--paper);cursor:pointer}
+  .btn.primary{background:var(--red);color:var(--paper)}
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+  .fan{position:relative;height:560px}
+  .fan figure{position:absolute;width:56%;border:6px solid #fff8ea;box-shadow:0 18px 40px rgba(40,25,10,.35);
+              background:#fff8ea;transition:transform .35s}
+  .fan figure img{width:100%;aspect-ratio:9/13;object-fit:cover}
+  .fan .c1{left:0;top:60px;transform:rotate(-9deg)}
+  .fan .c2{left:22%;top:0;transform:rotate(1deg);z-index:2}
+  .fan .c3{right:0;top:80px;transform:rotate(8deg)}
+  .fan:hover .c1{transform:rotate(-13deg) translateX(-14px)}
+  .fan:hover .c3{transform:rotate(12deg) translateX(14px)}
+
+  /* STRIP */
+  .strip{background:var(--ink);color:var(--paper);overflow:hidden;border-block:4px solid var(--red)}
+  .strip .track{display:flex;width:max-content;white-space:nowrap;padding:16px 0;animation:roll 24s linear infinite;
+                font-family:"Pirata One",serif;font-size:30px}
+  .strip .set{display:flex;gap:42px;padding-right:42px}
+  .strip .set span:nth-child(even){color:var(--mustard)}
+  @keyframes roll{to{transform:translateX(-50%)}}
+
+  /* SECTIONS */
+  section{padding:96px 0;scroll-margin-top:62px}
+  .sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+  h2{font-family:"Pirata One",serif;font-weight:400;font-size:clamp(48px,6vw,80px);line-height:.9}
+  h2 small{display:block;font-family:"Archivo Narrow",sans-serif;font-size:14px;letter-spacing:3px;
+           text-transform:uppercase;color:var(--red);margin-bottom:10px;font-weight:700}
+
+  .filters{display:flex;gap:8px;flex-wrap:wrap}
+  .filters button{font-family:"Archivo Narrow",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;
+       font-size:14px;padding:9px 16px;border:2px solid var(--ink);background:transparent;cursor:pointer;color:var(--ink)}
+  .filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+  .filters button:hover{background:var(--paper-2)}
+  .filters button[aria-pressed="true"]:hover{background:var(--ink)}
+  .filters .n{font-family:"Archivo",sans-serif;font-size:11px;letter-spacing:0;margin-left:6px;opacity:.6;vertical-align:1px}
+
+  .group{margin-bottom:64px}
+  .group.hide{display:none}
+  .g-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;border-bottom:3px solid var(--ink);padding-bottom:10px;margin-bottom:22px}
+  .g-head h3{font-family:"Pirata One",serif;font-weight:400;font-size:44px;line-height:1}
+  .g-head p{color:var(--muted);font-size:16px}
+  .row{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start}
+  .card{cursor:zoom-in;background:#fff8ea;padding:10px 10px 14px;flex:0 0 auto;
+        box-shadow:0 2px 0 rgba(0,0,0,.08),0 10px 24px rgba(60,40,20,.14);transition:transform .2s, box-shadow .2s;
+        border:none;text-align:left;font:inherit;color:inherit;display:block;width:min-content}
+  .card:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 18px 34px rgba(60,40,20,.25)}
+  .card picture{display:block;background:var(--paper-2)}
+  .card img{height:360px;width:auto;max-width:none}
+  .card .meta{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;margin-top:12px;gap:4px 14px}
+  .card .t{font-family:"Pirata One",serif;font-size:26px;line-height:1}
+  .card .k{font-family:"Archivo Narrow",sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+  @media (max-width:860px){ .card img{height:260px} .row{gap:14px} }
+  @media (max-width:520px){ .card{flex:1 1 calc(50% - 7px);width:auto;padding:6px 6px 10px} .card img{height:auto;width:100%} .card .t{font-size:20px} .lang{margin-left:auto} .lang button{padding:4px 7px;font-size:12px} .wrap{padding:0 16px} }
+
+  /* ABOUT */
+  .about{background:var(--ink);color:var(--paper)}
+  .about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+  .about h2 small{color:var(--mustard)}
+  .about p{font-size:19px;color:#d9ccb2;margin-top:18px;max-width:52ch}
+  .about p strong{color:var(--paper)}
+  .about figure{border:6px solid var(--paper);transform:rotate(-2.5deg);box-shadow:14px 14px 0 var(--red)}
+  .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .tags span{border:2px solid var(--mustard);color:var(--mustard);padding:6px 12px;font-family:"Archivo Narrow",sans-serif;
+             font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-size:13px}
+
+  /* SHOP */
+  .shop .box{border:4px solid var(--ink);background:var(--paper-2);padding:48px;display:grid;
+             grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;box-shadow:10px 10px 0 var(--ink)}
+  .shop ul{list-style:none;margin-top:22px}
+  .shop li{padding:10px 0;border-bottom:2px dashed rgba(22,18,15,.25);display:flex;gap:12px;font-weight:500}
+  .shop li::before{content:"✦";color:var(--red)}
+  .shop .thumbs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .shop .thumbs button{border:5px solid #fff8ea;box-shadow:0 8px 18px rgba(0,0,0,.2);padding:0;background:#fff8ea;cursor:zoom-in;transition:transform .2s}
+  .shop .thumbs button:hover{transform:translateY(-4px)}
+  .shop .thumbs button:nth-child(2){transform:translateY(24px)}
+  .shop .thumbs button:nth-child(2):hover{transform:translateY(20px)}
+  .shop .thumbs img{aspect-ratio:3/4;object-fit:cover;width:100%;height:auto}
+
+  /* CONTACT */
+  .contact{text-align:center;padding-bottom:70px}
+  .contact h2{font-size:clamp(56px,8vw,112px)}
+  .contact p{max-width:46ch;margin:18px auto 34px;font-size:19px;color:var(--ink-2)}
+  .links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+  .mail-line{margin-top:30px;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;font-size:18px}
+  .mail-line a{font-weight:700;text-decoration-color:var(--red);text-decoration-thickness:2px;text-underline-offset:4px;word-break:break-all}
+  .copy{font-family:"Archivo Narrow",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;font-size:12px;
+        border:2px solid var(--ink);background:transparent;padding:5px 10px;cursor:pointer;color:var(--ink)}
+  .copy:hover{background:var(--paper-2)}
+  footer{border-top:4px solid var(--ink);padding:26px 0;font-family:"Archivo Narrow",sans-serif;letter-spacing:2px;
+         text-transform:uppercase;font-size:13px;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer a{text-transform:none;letter-spacing:1px;text-decoration:none}
+  footer a:hover{color:var(--red)}
+
+  /* LIGHTBOX */
+  .lb{position:fixed;inset:0;background:rgba(14,11,9,.94);z-index:50;display:none;align-items:center;justify-content:center;padding:30px 30px 70px;touch-action:pan-y}
+  .lb.open{display:flex}
+  .lb img{max-height:min(86vh,100%);max-width:min(92vw,1100px);width:auto;border:6px solid #fff8ea;transition:opacity .2s;user-select:none}
+  .lb img.loading{opacity:0}
+  .lb .cap{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:var(--paper);
+           font-family:"Pirata One",serif;font-size:30px;padding:0 70px;line-height:1.1}
+  .lb .cap small{display:block;font-family:"Archivo Narrow",sans-serif;font-size:12px;letter-spacing:2px;color:#a89a84;margin-top:4px}
+  .lb button{position:absolute;background:none;border:none;color:var(--paper);font-size:44px;cursor:pointer;
+             width:60px;height:60px;line-height:1;font-family:"Archivo",sans-serif}
+  .lb button:hover{color:var(--mustard)}
+  .lb .x{top:14px;right:18px}
+  .lb .prev{left:12px;top:50%;transform:translateY(-50%)}
+  .lb .next{right:12px;top:50%;transform:translateY(-50%)}
+
+  @media (max-width:860px){
+    .menu-btn{display:flex}
+    nav .wrap > ul{position:absolute;top:66px;left:0;right:0;flex-direction:column;gap:0;margin:0;
+                   background:var(--ink);border-bottom:4px solid var(--red);display:none;box-shadow:0 16px 30px rgba(0,0,0,.35)}
+    nav.menu-open .wrap > ul{display:flex}
+    nav ul a{display:block;padding:16px 28px;font-size:16px;border-top:1px solid rgba(239,228,203,.12)}
+    .lang{margin-left:auto}
+    .hero .wrap,.about .wrap,.shop .box{grid-template-columns:1fr}
+    .fan{height:440px;max-width:460px;margin:0 auto;width:100%}
+    .shop .box{padding:28px}
+    section{padding:70px 0}
+    /* En celular las flechas van abajo para no tapar la obra (también se puede deslizar) */
+    .lb{padding:72px 12px 110px}
+    .lb img{max-width:100%;max-height:100%;border-width:4px}
+    .lb .x{top:6px;right:6px}
+    .lb .prev,.lb .next{top:auto;bottom:10px;transform:none}
+    .lb .cap{bottom:62px;font-size:24px;padding:0 16px}
+  }
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} .strip .track{animation:none} *{transition:none!important} }
+</style>
+</head>
+<body>
+<a class="skip" href="#obra" data-i18n="skip">Saltar a la obra</a>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Agustín Cohen, inicio">A<span>.</span></a>
+    <ul id="menu">
+      <li><a href="#obra" data-i18n="nav1">Obra</a></li>
+      <li><a href="#tienda" data-i18n="nav2">Tienda</a></li>
+      <li><a href="#sobre-mi" data-i18n="nav3">Sobre mí</a></li>
+      <li><a href="#contacto" data-i18n="nav4">Contacto</a></li>
+    </ul>
+    <div class="lang" role="group" aria-label="Idioma / Language"><button data-lang="es" aria-pressed="true">ES</button><button data-lang="en" aria-pressed="false">EN</button></div>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú" data-i18n-label="menuOpen"><span></span></button>
+  </div>
+</nav>
+
+<main>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" data-i18n="eyebrow">Buenos Aires · Ilustración & Tattoo</div>
+      <h1>Agustín Cohen<em data-i18n="h1em">Tattoo &amp; Ilustración</em></h1>
+      <p class="lead" data-i18n="lead">Tradicional Americano y Neotradicional, con desvíos al tarot, el cyberpunk y el cine. Líneas sólidas, sombras saturadas y mucha fantasía.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#obra" data-i18n="cta1">Ver la obra</a>
+        <a class="btn" href="#tienda" data-i18n="cta2">Comprar flash</a>
+      </div>
+    </div>
+    <div class="fan" aria-hidden="true">
+      <figure class="c1"><img src="thumb/presaocazador.jpg" alt="" width="509" height="720" fetchpriority="high"></figure>
+      <figure class="c2"><img src="thumb/moiras.jpg" alt="" width="509" height="720" fetchpriority="high"></figure>
+      <figure class="c3"><img src="thumb/emperatriz.jpg" alt="" width="509" height="720"></figure>
+    </div>
+  </div>
+</header>
+
+<div class="strip" aria-hidden="true">
+  <div class="track">
+    <div class="set"><span data-i18n="sTrad">Tradicional Americano</span><span>✦</span><span data-i18n="sNeo">Neotradicional</span><span>✦</span><span>Tarot</span><span>✦</span><span>Cyberpunk</span><span>✦</span><span data-i18n="sPos">Pósters</span><span>✦</span><span>Flash Sheets</span><span>✦</span><span data-i18n="sTrad">Tradicional Americano</span><span>✦</span><span data-i18n="sNeo">Neotradicional</span><span>✦</span><span>Tarot</span><span>✦</span><span>Cyberpunk</span><span>✦</span><span data-i18n="sPos">Pósters</span><span>✦</span><span>Flash Sheets</span><span>✦</span></div>
+    <div class="set"><span data-i18n="sTrad">Tradicional Americano</span><span>✦</span><span data-i18n="sNeo">Neotradicional</span><span>✦</span><span>Tarot</span><span>✦</span><span>Cyberpunk</span><span>✦</span><span data-i18n="sPos">Pósters</span><span>✦</span><span>Flash Sheets</span><span>✦</span><span data-i18n="sTrad">Tradicional Americano</span><span>✦</span><span data-i18n="sNeo">Neotradicional</span><span>✦</span><span>Tarot</span><span>✦</span><span>Cyberpunk</span><span>✦</span><span data-i18n="sPos">Pósters</span><span>✦</span><span>Flash Sheets</span><span>✦</span></div>
+  </div>
+</div>
+
+<section id="obra">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-i18n="obraH"><small>Portfolio</small>La obra</h2>
+      <div class="filters" role="group" aria-label="Filtrar por tema" data-i18n-label="filtersLabel">
+        <button data-f="all" data-slug="" aria-pressed="true" data-i18n="fAll">Todo</button>
+        <button data-f="Tradicional americano" data-slug="tradicional" aria-pressed="false" data-i18n="fTrad">Tradicional</button>
+        <button data-f="Neotradicional" data-slug="neotradicional" aria-pressed="false" data-i18n="fNeo">Neotradicional</button>
+        <button data-f="Tarot" data-slug="tarot" aria-pressed="false" data-i18n="fTarot">Tarot</button>
+        <button data-f="Cyberpunk" data-slug="cyberpunk" aria-pressed="false" data-i18n="fCyber">Cyberpunk</button>
+        <button data-f="Pósters" data-slug="posters" aria-pressed="false" data-i18n="fPos">Pósters</button>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="shop" id="tienda">
+  <div class="wrap">
+    <div class="box">
+      <div>
+        <h2 data-i18n="shopH"><small>Tienda</small>Flash sheets digitales</h2>
+        <p style="margin-top:18px;font-size:19px;color:var(--ink-2)" data-i18n="shopP">Láminas en alta resolución listas para imprimir, calcar o usar de referencia. Escribime, elegís la que querés y te la mando.</p>
+        <ul>
+          <li data-i18n="li1">Archivos a 300 DPI, listos para imprenta</li>
+          <li data-i18n="li2">Diseños originales firmados</li>
+          <li data-i18n="li3">Me escribís, coordinamos el pago y te llega el archivo</li>
+        </ul>
+        <div class="ctas">
+          <a class="btn primary" href="https://www.instagram.com/agustincxhen/" target="_blank" rel="noopener" data-i18n="shopCta">Consultame por Instagram</a>
+          <a class="btn" href="mailto:agustincohenn@gmail.com?subject=Flash%20sheets" data-i18n="shopMail">O por mail</a>
+        </div>
+      </div>
+      <div class="thumbs">
+        <button data-open="dragones" aria-label="Ver flash sheet de dragones" data-i18n-label="seeDragons"><img src="thumb/dragones.jpg" alt="" width="405" height="720" loading="lazy"></button>
+        <button data-open="mcr" aria-label="Ver flash sheet Drop the Dagger" data-i18n-label="seeMcr"><img src="thumb/mcr.jpg" alt="" width="509" height="720" loading="lazy"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre-mi">
+  <div class="wrap">
+    <figure><img src="thumb/milanesa.jpg" alt="Retrato de Milanesa, la gata" data-i18n-alt="milaAlt" width="509" height="720" loading="lazy"></figure>
+    <div>
+      <h2 data-i18n="aboutH"><small>Sobre mí</small>Hola, soy Agus</h2>
+      <p data-i18n="ab1">Soy <strong>ilustrador, diseñador y tatuador</strong> de Buenos Aires. Dibujo en iPad con Procreate, Fresco e Illustrator, y todo lo que hago sale del Tradicional Americano y el Neotradicional.</p>
+      <p data-i18n="ab2">Me inspiran <strong>El Señor de los Anillos, Top Gun, Harry Potter y D&amp;D</strong>: si tiene espadas, dragones o una buena frase en un banner, probablemente lo dibuje. Firmo cada lámina con una <strong>A</strong> y el año.</p>
+      <p data-i18n="ab3">(Y sí, la de la foto es Milanesa, mi gata y musa oficial.)</p>
+      <div class="tags"><span>Flash</span><span>Neotrad</span><span>Traditional</span><span data-i18n="tag1">Fantasía</span><span data-i18n="tag2">Cultura pop</span><span>D&amp;D</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <h2 data-i18n="conH"><small>Contacto</small>¿Hacemos algo juntos?</h2>
+    <p data-i18n="conP">Diseños de tatuaje a pedido, láminas, ilustraciones y recursos para tu mesa de rol. Escribime y lo charlamos.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:agustincohenn@gmail.com" data-i18n="mailBtn">Escribime un mail</a>
+      <a class="btn" href="https://www.instagram.com/agustincxhen/" target="_blank" rel="noopener">Instagram · @agustincxhen</a>
+      <a class="btn" href="https://www.tiktok.com/@acxhen" target="_blank" rel="noopener">TikTok · @acxhen</a>
+    </div>
+    <div class="mail-line">
+      <a href="mailto:agustincohenn@gmail.com">agustincohenn@gmail.com</a>
+      <button class="copy" type="button" data-copy="agustincohenn@gmail.com" data-i18n="copy">Copiar</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© A 2026 · Agustín Cohen</span><a href="mailto:agustincohenn@gmail.com">agustincohenn@gmail.com</a><span>Buenos Aires, Argentina</span></div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Obra ampliada" data-i18n-label="lbLabel">
+  <button class="x" aria-label="Cerrar" data-i18n-label="close">×</button>
+  <button class="prev" aria-label="Anterior" data-i18n-label="prev">‹</button>
+  <img alt="">
+  <button class="next" aria-label="Siguiente" data-i18n-label="next">›</button>
+  <div class="cap" aria-live="polite"></div>
+</div>
+
+<script>
+const groups = [
+  ["Tradicional americano","Líneas sólidas, colores planos y banners.","American Traditional","Bold lines, flat colors and banners.",[
+    ["presaocazador","Cazador o presa","flash",2025],["lotr-1","No pasarás","flash",2025],["lotr2","El Blanco","flash",2025],
+    ["devil","Elegí este camino","flash",2025],["gloria-y-honor","Gloria y honor","flash",2025],["dragones","Dragones","flash",2025],
+    ["no-time","No pierdas el tiempo","flash",2025],["no-luck","Mala suerte","flash",2025],["mcr","Drop the Dagger","flash",2025],["harpias","Arpías","flash",2025]]],
+  ["Neotradicional","Más detalle, sombras saturadas y marcos ornamentales.","Neo-Traditional","More detail, saturated shading and ornamental frames.",[
+    ["baphomet","Baphomet","ilus",2023],["coronacion","Coronación","ilus",2024],["angel-caido","Ángel caído","ilus",2024],["two-hours","Two hours","ilus",2024],["el-fuego","El fuego","ilus",2025],["corazo-n","Corazón","ilus",2025],["vitraux-guerrera","Vitraux guerrera","ilus",2025],["vitraux-monje","Vitraux monje","ilus",2025],["monja","Monja","ilus",2025],["moiras","Las Moiras","ilus",2025],["seraphine","Seraphine","ilus",2025],["mini-neo","Mini neo","flash",2025],["serpiente-patagonica","Serpiente patagónica","ilus",2026],["puma-patagonico","Puma patagónico","ilus",2026],["milanesa","Milanesa","ilus",2025]]],
+  ["Tarot","Arcanos mayores a mi manera.","Tarot","Major arcana, my way.",[
+    ["el-loco","El loco","ilus",2025],["emperatriz","Emperatriz","ilus",2026]]],
+  ["Cyberpunk","Neón, ciudades y máquinas.","Cyberpunk","Neon, cities and machines.",[
+    ["mecha","Mecha","ilus",2026],["pacocity","Paco City","ilus",2024]]],
+  ["Pósters","Pósters minimalistas de películas.","Posters","Minimalist movie posters.",[
+    ["poster-retorno-del-rey","El retorno del rey","poster",2026],["poster-blade-runner","Blade Runner","poster",2026],["poster-jurassic-park","Jurassic Park","poster",2026],
+    ["poster-eternal-sunshine","Eternal Sunshine","poster",2026],["poster-devil-wears-prada","The Devil Wears Prada","poster",2026]]]
+];
+
+const IMGS = window.IMGS || {};          // medidas de las miniaturas (lo genera optimizar.py)
+const works = groups.flatMap(g=>g[4]);
+const labels = {es:{flash:"Flash sheet", ilus:"Ilustración", poster:"Póster"}, en:{flash:"Flash sheet", ilus:"Illustration", poster:"Poster"}};
+const titlesEn = {"presaocazador":"Hunter or Prey","lotr-1":"You Shall Not Pass","lotr2":"The White","devil":"Choose This Path","gloria-y-honor":"Glory and Honor","dragones":"Dragons","no-time":"Don't Waste Time","no-luck":"Bad Luck","harpias":"Harpies","el-fuego":"The Fire","corazo-n":"Heart","monja":"Nun","coronacion":"Coronation","angel-caido":"Fallen Angel","moiras":"The Moirai","serpiente-patagonica":"Patagonian Serpent","puma-patagonico":"Patagonian Puma","vitraux-guerrera":"Stained Glass Warrior","vitraux-monje":"Stained Glass Monk","el-loco":"The Fool","emperatriz":"The Empress","poster-retorno-del-rey":"The Return of the King"};
+let lang="es";
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const grid = $("#grid");
+function title(f,t){return lang==="en"&&titlesEn[f]?titlesEn[f]:t}
+
+/* Miniatura: WebP chica para celular, WebP normal para compu, JPG de respaldo.
+   Si la obra todavía no pasó por optimizar.py, usa solo el JPG. */
+function thumbHTML(f,alt){
+  const d=IMGS[f];
+  if(!d) return `<img loading="lazy" decoding="async" src="thumb/${f}.jpg" alt="${esc(alt)}">`;
+  const [w,h]=d, r=w/h;
+  const sizes=`(max-width:520px) 46vw, (max-width:860px) ${Math.round(260*r)}px, ${Math.round(360*r)}px`;
+  return `<picture><source type="image/webp" srcset="sm/${f}.webp ${Math.min(400,Math.round(400*Math.min(1,r)))}w, thumb/${f}.webp ${w}w" sizes="${sizes}">`+
+         `<img loading="lazy" decoding="async" src="thumb/${f}.jpg" width="${w}" height="${h}" alt="${esc(alt)}"></picture>`;
+}
+
+function build(){
+  grid.innerHTML=""; let n=0;
+  groups.forEach(([name,desc,nameEn,descEn,items])=>{
+    const sec=document.createElement("div"); sec.className="group"; sec.dataset.g=name;
+    sec.innerHTML=`<div class="g-head"><h3>${lang==="en"?nameEn:name}</h3><p>${lang==="en"?descEn:desc}</p></div><div class="row"></div>`;
+    const row=$(".row",sec);
+    items.forEach(([f,t,k,y])=>{
+      const i=n++; const tt=title(f,t);
+      const b=document.createElement("button");
+      b.className="card"; b.type="button"; b.dataset.i=i;
+      b.innerHTML=`${thumbHTML(f,tt)}<span class="meta"><span class="t">${esc(tt)}</span><span class="k">${labels[lang][k]} · ${y}</span></span>`;
+      b.onclick=()=>openLb(i,b);
+      row.appendChild(b);
+    });
+    grid.appendChild(sec);
+  });
+  applyFilter();
+}
+
+/* FILTROS (+ link directo: #tarot, #posters, etc.) */
+let curFilter="all";
+const filterBtns=$$(".filters button");
+function applyFilter(){
+  $$(".group",grid).forEach(g=>g.classList.toggle("hide",curFilter!=="all"&&g.dataset.g!==curFilter));
+  filterBtns.forEach(x=>x.setAttribute("aria-pressed",x.dataset.f===curFilter));
+}
+function addCounts(){
+  filterBtns.forEach(btn=>{
+    $(".n",btn)?.remove();
+    const n=btn.dataset.f==="all"?works.length:(groups.find(g=>g[0]===btn.dataset.f)||[,,,,[]])[4].length;
+    btn.insertAdjacentHTML("beforeend",`<span class="n">${n}</span>`);
+  });
+}
+function filterFromHash(){
+  const m=location.hash.match(/^#(?:obra\/)?([\w-]+)$/);
+  const btn=m&&filterBtns.find(b=>b.dataset.slug===m[1]);
+  curFilter=btn?btn.dataset.f:"all"; applyFilter();
+  return !!btn;
+}
+filterBtns.forEach(btn=>{
+  btn.onclick=()=>{
+    curFilter=btn.dataset.f; applyFilter();
+    history.replaceState(null,"",btn.dataset.slug?`#${btn.dataset.slug}`:"#obra");
+  };
+});
+addEventListener("hashchange",()=>{ if(filterFromHash()) $("#obra").scrollIntoView(); });
+
+/* Protección básica de las imágenes */
+document.addEventListener("contextmenu",e=>{if(e.target.tagName==="IMG")e.preventDefault()});
+document.addEventListener("dragstart",e=>{if(e.target.tagName==="IMG")e.preventDefault()});
+
+/* MENÚ DE CELULAR */
+const nav=$("#nav"), menuBtn=$(".menu-btn");
+function setMenu(open){
+  nav.classList.toggle("menu-open",open); menuBtn.setAttribute("aria-expanded",open);
+  menuBtn.setAttribute("aria-label",T(open?"menuClose":"menuOpen"));
+}
+menuBtn.onclick=()=>setMenu(!nav.classList.contains("menu-open"));
+$$("#menu a").forEach(a=>a.addEventListener("click",()=>setMenu(false)));
+document.addEventListener("click",e=>{if(nav.classList.contains("menu-open")&&!nav.contains(e.target))setMenu(false)});
+
+/* LIGHTBOX */
+const lb=$("#lb"), lbImg=$("img",lb), cap=$(".cap",lb);
+let cur=0, opener=null;
+const fullSrc=f=>IMGS[f]?`full/${f}.webp`:`full/${f}.jpg`;
+lbImg.addEventListener("load",()=>lbImg.classList.remove("loading"));
+lbImg.addEventListener("error",()=>{ // si falla el WebP, probá el JPG
+  const f=works[cur][0]; if(!lbImg.src.endsWith(".jpg")) lbImg.src=`full/${f}.jpg`;
+});
+function visible(){return $$(".group:not(.hide) .card",grid).map(c=>+c.dataset.i)}
+function show(i){
+  cur=i; const [f,t,k,y]=works[i]; const tt=title(f,t);
+  const v=visible(), p=v.indexOf(i);
+  lbImg.classList.add("loading"); lbImg.removeAttribute("src");
+  lbImg.src=fullSrc(f); lbImg.alt=tt;
+  cap.innerHTML=`${esc(tt)}<small>${labels[lang][k]} · ${y}${p>=0?` · ${p+1} / ${v.length}`:""}</small>`;
+  // precargar la anterior y la siguiente
+  if(v.length>1) [v[(p+1)%v.length],v[(p-1+v.length)%v.length]].forEach(j=>{new Image().src=fullSrc(works[j][0])});
+}
+function openLb(i,from){
+  opener=from||document.activeElement; show(i);
+  lb.classList.add("open"); document.body.style.overflow="hidden";
+  $(".x",lb).focus();
+}
+function closeLb(){
+  lb.classList.remove("open"); document.body.style.overflow=""; lbImg.removeAttribute("src");
+  if(opener&&opener.focus) opener.focus({preventScroll:true});
+}
+function step(d){const v=visible();if(!v.length)return;const p=v.indexOf(cur);show(v[(p+d+v.length)%v.length])}
+$(".x",lb).onclick=closeLb;
+$(".prev",lb).onclick=e=>{e.stopPropagation();step(-1)};
+$(".next",lb).onclick=e=>{e.stopPropagation();step(1)};
+lb.onclick=e=>{if(e.target===lb)closeLb()};
+addEventListener("keydown",e=>{
+  if(!lb.classList.contains("open")){ if(e.key==="Escape") setMenu(false); return; }
+  if(e.key==="Escape")closeLb(); if(e.key==="ArrowRight")step(1); if(e.key==="ArrowLeft")step(-1);
+  if(e.key==="Tab"){ // el foco queda dentro del visor
+    const f=$$("button",lb), a=f.indexOf(document.activeElement);
+    e.preventDefault(); f[(a+(e.shiftKey?-1:1)+f.length)%f.length].focus();
+  }
+});
+// deslizar en el celular
+let tx=null, ty=null;
+lb.addEventListener("touchstart",e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+lb.addEventListener("touchend",e=>{
+  if(tx===null)return; const dx=e.changedTouches[0].clientX-tx, dy=e.changedTouches[0].clientY-ty; tx=null;
+  if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)) step(dx<0?1:-1);
+  else if(dy>90&&Math.abs(dy)>Math.abs(dx)) closeLb();   // deslizar hacia abajo cierra
+});
+
+/* Láminas de la tienda: abren el visor */
+$$(".shop [data-open]").forEach(b=>b.onclick=()=>{
+  const i=works.findIndex(w=>w[0]===b.dataset.open); if(i>=0) openLb(i,b);
+});
+
+/* Copiar mail */
+$$("[data-copy]").forEach(b=>b.onclick=async()=>{
+  try{ await navigator.clipboard.writeText(b.dataset.copy); b.textContent=T("copied"); }
+  catch(e){ // si no se puede copiar, deja el mail seleccionado
+    const a=b.previousElementSibling, r=document.createRange(); r.selectNodeContents(a);
+    const sel=getSelection(); sel.removeAllRanges(); sel.addRange(r); return; }
+  setTimeout(()=>b.textContent=T("copy"),1800);
+});
+
+/* IDIOMAS */
+const EN={
+ skip:"Skip to the work",
+ nav1:"Work",nav2:"Shop",nav3:"About",nav4:"Contact",
+ eyebrow:"Buenos Aires · Illustration & Tattoo",h1em:"Tattoo &amp; Illustration",
+ lead:"American Traditional and Neo-Traditional, with detours into tarot, cyberpunk and film. Bold lines, saturated shading and plenty of fantasy.",
+ cta1:"See the work",cta2:"Buy flash",
+ obraH:"<small>Portfolio</small>The work",fAll:"All",fTrad:"Traditional",fNeo:"Neo-Traditional",fPos:"Posters",
+ sTrad:"American Traditional",sNeo:"Neo-Traditional",sPos:"Posters",
+ shopH:"<small>Shop</small>Digital flash sheets",
+ shopP:"High-resolution sheets ready to print, trace or use as reference. Message me, pick the one you want and I'll send it over.",
+ li1:"300 DPI files, print-ready",li2:"Original signed designs",li3:"Message me, we sort out payment and the file is yours",
+ shopCta:"Message me on Instagram",shopMail:"Or by email",
+ aboutH:"<small>About</small>Hi, I'm Agus",
+ ab1:"I'm an <strong>illustrator, designer and tattoo artist</strong> from Buenos Aires. I draw on iPad with Procreate, Fresco and Illustrator, and everything I make comes from American Traditional and Neo-Traditional.",
+ ab2:"I'm inspired by <strong>The Lord of the Rings, Top Gun, Harry Potter and D&amp;D</strong>: if it has swords, dragons or a good line on a banner, I'll probably draw it. I sign every piece with an <strong>A</strong> and the year.",
+ ab3:"(And yes, that's Milanesa in the picture, my cat and official muse.)",
+ tag1:"Fantasy",tag2:"Pop culture",
+ conH:"<small>Contact</small>Let's make something together",
+ conP:"Custom tattoo designs, prints, illustrations and resources for your tabletop game. Drop me a message and let's talk.",
+ mailBtn:"Send me an email",copy:"Copy",copied:"Copied!",
+ // etiquetas para lectores de pantalla y textos alternativos
+ menuOpen:"Open menu",menuClose:"Close menu",filtersLabel:"Filter by theme",
+ lbLabel:"Enlarged artwork",close:"Close",prev:"Previous",next:"Next",
+ seeDragons:"View the dragons flash sheet",seeMcr:"View the Drop the Dagger flash sheet",
+ milaAlt:"Portrait of Milanesa, the cat"
+};
+const ES={menuClose:"Cerrar menú",copied:"¡Copiado!"};
+$$("[data-i18n]").forEach(el=>{ES[el.dataset.i18n]=el.innerHTML});
+$$("[data-i18n-label]").forEach(el=>{ES[el.dataset.i18nLabel]=el.getAttribute("aria-label")});
+$$("[data-i18n-alt]").forEach(el=>{ES[el.dataset.i18nAlt]=el.alt});
+const T=k=>(lang==="en"?EN:ES)[k]??ES[k];
+
+function setLang(l){
+  lang=l; document.documentElement.lang=l;
+  $$("[data-i18n]").forEach(el=>{el.innerHTML=T(el.dataset.i18n)});
+  $$("[data-i18n-label]").forEach(el=>{el.setAttribute("aria-label",T(el.dataset.i18nLabel))});
+  $$("[data-i18n-alt]").forEach(el=>{el.alt=T(el.dataset.i18nAlt)});
+  menuBtn.setAttribute("aria-label",T(nav.classList.contains("menu-open")?"menuClose":"menuOpen"));
+  $$(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));
+  document.title=l==="en"?"Agustín Cohen — Tattoo & Illustration":"Agustín Cohen — Tattoo & Ilustración";
+  addCounts(); build();
+  if(lb.classList.contains("open")) show(cur);
+  try{localStorage.setItem("lang",l)}catch(e){}
+}
+$$(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+let initial="es";
+try{initial=localStorage.getItem("lang")||((navigator.language||"").toLowerCase().startsWith("es")?"es":"en")}catch(e){}
+setLang(initial);
+if(filterFromHash()) $("#obra").scrollIntoView();
+</script>
+</body>
+</html>
